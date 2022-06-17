@@ -1,0 +1,28 @@
+.root {
+    @apply relative flex items-center justify-center border-1 border-primary h-12.25 
+    max-w-[13.75rem] w-full  bg-transparent tracking-[0.25rem]
+    overflow-hidden
+    ;
+}
+.root_button_content {
+    @apply text-sm text-primary z-10
+}
+.root:hover .root_button_content {
+    @apply text-black
+}
+.root::before {
+    @apply absolute w-0 content-[''] h-full bg-primary ease-out duration-300;
+    transform: skewX(-10deg);
+    left: -5%;
+}
+
+.root::after {
+    @apply absolute right-0 bottom-0 content-['']  w-1 h-1 bg-primary;
+}
+
+.root:hover::before {
+    width: 110%;
+}
+.root:hover::after {
+    @apply bg-white;
+}

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border m-0 p-0;
+  }
+  html,
+  body {
+    @apply font-sans bg-body text-white;
+    -webkit-font-smoothing: antialiased;
+  }
+  #__next {
+    @apply flex pl-32.5 min-w-screen min-h-screen overflow-x-hidden;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  a,
+  button {
+    @apply cursor-pointer;
+  }
+
+  ul {
+    @apply list-none;
+  }
+}

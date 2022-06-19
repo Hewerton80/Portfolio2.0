@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import NavBar from '../common/NabBar'
 
 interface MainTemplateProps extends GlobalProps {}

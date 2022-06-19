@@ -4,7 +4,7 @@ function NabBar({ className, ...restProps }: GlobalProps) {
   return (
     <nav
       className={classnames(
-        'fixed left-0 top-0',
+        'fixed left-0 top-0 z-10',
         'w-32.5 h-screen',
         ' bg-gray-900',
         className

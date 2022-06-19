@@ -12,6 +12,7 @@
     "white": "#ffffff",
     "transparent": "transparent",
     "primary": "#08fdd8",
+    "secondary": "#fd2155",
     "gray": {
       "500": "#a7a7a7",
       "600": "#8d8d8d",

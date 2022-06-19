@@ -2,18 +2,24 @@ import classNames from 'classnames'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import Text from '../ui/typography/Text'
 import Button from '../ui/forms/Button'
+import TiktokLogoReplica from '../ui/dataDisplay/TiktokLogoReplica'
 function HomeSection({ className, ...restProps }: GlobalProps) {
   return (
     <section
-      className={classNames('flex', 'w-full h-fit', 'px-30 py-90', className)}
+      className={classNames(
+        'flex items-center',
+        'w-full min-h-screen',
+        'px-30 py-90',
+        className
+      )}
       {...restProps}
     >
-      <div className="flex flex-col pl-12">
+      <div className={classNames('flex flex-col', ' pl-12 space-y-16')}>
         <Text
           as="h1"
           className={classNames(
             'text-8xl font-bold',
-            'mb-16',
+            'slide-left',
             getHtmlTagWrapperStyle('h1')
           )}
         >
@@ -22,7 +28,11 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           </Text>
           <br />
           <Text as="span" hasWordHoverEffect>
-            {"I'am Hewerton,"}
+            {"I'm "}
+          </Text>
+          <TiktokLogoReplica char="H" />
+          <Text as="span" hasWordHoverEffect>
+            ewerton,
           </Text>
           <br />
           <Text as="span" hasWordHoverEffect>
@@ -33,7 +43,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           as="p"
           className={classNames(
             'text-gray-600 tracking-[0.25rem]',
-            'mb-16',
+            'slide-left',
             getHtmlTagWrapperStyle('p')
           )}
         >

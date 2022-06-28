@@ -16,15 +16,16 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     fontFamily: assets.fontFamily,
-    colors: assets.colors,
     extend: {
+      colors: assets.colors,
       padding: {
         32.5: '8.125rem',
-        30: '1.875rem',
-        90: '5.625rem',
+        7.5: '1.875rem',
+        22.5: '5.625rem',
       },
       height: {
         12.25: '3.125rem',
+        fit: 'fit-content',
       },
       fontSize: {
         '9xl': ['10.3rem', '8.7rem'],
@@ -40,5 +41,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 }

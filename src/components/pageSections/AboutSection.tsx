@@ -8,7 +8,7 @@ import Text from '../ui/typography/Text'
 function AboutSection({ className, ...restProps }: GlobalProps) {
   return (
     <section
-      className={classNames('flex', 'w-full h-fit', 'px-30 py-90', className)}
+      className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5', className)}
       {...restProps}
     >
       <div className="flex flex-col pl-12">

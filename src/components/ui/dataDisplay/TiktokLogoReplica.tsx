@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import style from './TiktokLogoReplica.module.css'
 interface TiktokLogoReplicaProps extends GlobalProps {
   char: string
 }

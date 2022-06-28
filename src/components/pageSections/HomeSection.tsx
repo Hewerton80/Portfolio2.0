@@ -9,12 +9,12 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
       className={classNames(
         'flex items-center',
         'w-full min-h-screen',
-        'px-30 py-90',
+        'px-7.5 py-22.5',
         className
       )}
       {...restProps}
     >
-      <div className={classNames('flex flex-col', ' pl-12 space-y-16')}>
+      <div className={classNames('flex flex-col', 'pl-12 space-y-16')}>
         <Text
           as="h1"
           className={classNames(

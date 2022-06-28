@@ -12,7 +12,7 @@
     -webkit-font-smoothing: antialiased;
   }
   #__next {
-    @apply flex flex-col pl-32.5 min-w-screen min-h-screen overflow-x-hidden;
+    @apply flex flex-col pl-32.5 min-h-screen overflow-x-hidden;
   }
   a {
     text-decoration: none;

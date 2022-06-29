@@ -3,6 +3,7 @@ import classNames from 'classnames'
 const tagsContents = {
   h1: "before:content-['<h1>'] after:content-['</h1>']",
   h2: "before:content-['<h2>'] after:content-['</h2>']",
+  h3: "before:content-['<h3>'] after:content-['</h3>']",
   p: "before:content-['<p>'] after:content-['</p>']",
 }
 

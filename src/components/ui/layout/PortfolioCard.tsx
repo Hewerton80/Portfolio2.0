@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Dialog } from '@headlessui/react'
 import classNames from 'classnames'
+import Link from 'next/link'
 import { useState } from 'react'
 import { staticInfo } from '../../../utils/staticInfo'
 import { Modal, ModalContent, ModalTitle } from '../overlay/Modal'
@@ -12,6 +12,15 @@ interface PortfolioCardProps extends GlobalProps {
 
 function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardProps) {
   const [openModal, setOpenModal] = useState(false)
+
+  const imgModalElement = (
+    <img
+      className={classNames('w-full border-y')}
+      src={portifolio.imgs[0]}
+      alt={portifolio.title}
+      loading="lazy"
+    />
+  )
   return (
     <>
       <div
@@ -53,25 +62,68 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
           {portifolio.title}
         </Text>
       </div>
-      {/* <Dialog open={openModal} onClose={() => setOpenModal(false)}>
-        <Dialog.Panel>
-          <Dialog.Title>Deactivate account</Dialog.Title>
-          <Dialog.Description>
-            This will permanently deactivate your account
-          </Dialog.Description>
-
-          <p>
-            Are you sure you want to deactivate your account? All of your data will be
-            permanently removed. This action cannot be undone.
-          </p>
-
-          <button onClick={() => setOpenModal(false)}>Deactivate</button>
-          <button onClick={() => setOpenModal(false)}>Cancel</button>
-        </Dialog.Panel>
-      </Dialog> */}
-      <Modal show={openModal} onClose={() => setOpenModal(false)}>
+      <Modal show={openModal} size="lg" onClose={() => setOpenModal(false)}>
         <ModalTitle> {portifolio.title}</ModalTitle>
-        <ModalContent>teste</ModalContent>
+        <ModalContent className="space-y-4">
+          <p className="text-sm">{portifolio.description}</p>
+          {portifolio?.github && (
+            <div className="flex space-x-2">
+              <strong className="mb-2">GitHub: </strong>{' '}
+              <Link href={portifolio?.github.link} passHref>
+                <a
+                  className="underline text-blue-400 line-clamp-1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {portifolio?.github.title}
+                </a>
+              </Link>
+            </div>
+          )}
+          {portifolio?.link && (
+            <div className="flex space-x-2">
+              <strong className="mb-2">Acessar site: </strong>{' '}
+              <Link href={portifolio.link} passHref>
+                <a
+                  className="underline text-blue-400 line-clamp-1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {portifolio.link}
+                </a>
+              </Link>
+            </div>
+          )}
+          <div className="flex flex-col">
+            <strong className="mb-2">Tecnologias usadas: </strong>
+            <div className="flex flex-wrap -ml-2 -mt-2">
+              {portifolio.techs.map((technology, index) => (
+                <span
+                  key={technology + index}
+                  className={classNames(
+                    'flex items-start justify-center',
+                    'ml-2 mt-2',
+                    'text-primary text-sm',
+                    'border border-primary rounded-full px-2 py-1'
+                  )}
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex w-3/5 justify-center mx-auto">
+            {portifolio?.link ? (
+              <Link href={portifolio.link} passHref>
+                <a target="_blank" rel="noreferrer">
+                  {imgModalElement}
+                </a>
+              </Link>
+            ) : (
+              imgModalElement
+            )}
+          </div>
+        </ModalContent>
       </Modal>
     </>
   )

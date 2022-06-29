@@ -1,6 +1,11 @@
+import { DateTime } from 'luxon'
+const startEdutacationDate = '2016-06-29T12:00:00.000Z'
+const startCarrerDate = '2019-03-29T12:00:00.000Z'
 export const staticInfo = {
   aboutMe: [
-    `Bom, sou um programador frontend que estuda programação há cerca de 5 anos, estou no mercado há cerca de 3 anos.`,
+    `Bom, sou um programador frontend que estuda programação ${DateTime.fromISO(
+      startEdutacationDate
+    ).toRelative()}, estou no mercado ${DateTime.fromISO(startCarrerDate).toRelative()}.`,
     `Do back ao front, Trabalhei em diversos projetos, tais como: painéis gerenciais, plataforma de educação, marketplace, landing pages, blogs etc.`,
     `Tenho experiência em Javascript, typescript, Node.js, express, ReactJs, Next Js, banco de dados relacionais, bootstrap, tailwind, styled components, html, css, scss, construção de interfaces baseados em templates Figma e Adobe. No momento estudo React Native e tenho interesse em escalabilidade e práticas de testes.`,
   ],
@@ -98,7 +103,11 @@ export const staticInfo = {
         '/images/Screenshot_lop22.png',
         '/images/Screenshot_lop33.png',
       ],
-      link: 'https://lop.ect.ufrn.br',
+      link: 'https://lop.natalnet.br',
+      github: {
+        title: 'lop-front-end',
+        link: 'https://github.com/Natalnet/lop-front-end',
+      },
     },
     {
       title: 'Gerenciador de tarefas',
@@ -112,7 +121,11 @@ export const staticInfo = {
       ],
       widthImages: 200,
       techs: ['React Native', 'TypeScript', 'Styled Components'],
-      link: 'https://github.com/Hewerton80/Task-Manger/blob/master/README.md',
+      // link: 'https://github.com/Hewerton80/Task-Manger/blob/master/README.md',
+      github: {
+        title: 'Task-Manger',
+        link: 'https://github.com/Hewerton80/Task-Manger/blob/master/README.md',
+      },
       notLandscape: true,
     },
     {
@@ -122,6 +135,11 @@ export const staticInfo = {
         'https://user-images.githubusercontent.com/37268237/166114575-ccc1b876-e893-460f-9ac5-c8bf4660b8ab.gif',
       ],
       techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
+      link: 'https://spotify-clone-next-tailwind.vercel.app',
+      github: {
+        title: 'spotify-clone-next-tailwind',
+        link: 'https://github.com/Hewerton80/spotify-clone-next-tailwind#readme',
+      },
     },
     {
       title: 'Conversor de moeda online',
@@ -130,6 +148,21 @@ export const staticInfo = {
         'https://user-images.githubusercontent.com/37268237/164991850-04973204-acfc-44c8-a8b8-85463c7c3657.gif',
       ],
       techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
+      link: 'https://currency-convert-front.vercel.app',
+      github: {
+        title: 'currency-convert',
+        link: 'https://github.com/Hewerton80/currency-convert-front#readme',
+      },
+    },
+    {
+      title: 'Pokedex',
+      description:
+        "Projeto desenvolvido para consumir a api 'pokeapi.co'. Funcionalidades: Lista pokemons, habilidades, tipos e obtêm informações especificas do pokemon.",
+      techs: ['HTML', 'CSS', 'NodeJS', 'ReactJS', 'Material UI', 'Styled components'],
+      imgs: [
+        'https://user-images.githubusercontent.com/37268237/170846170-71bad836-0062-45ce-b148-c220c0632e1e.gif',
+      ],
+      link: 'https://upbeat-jones-72d20b.netlify.app/',
     },
     {
       title: 'Gerador de dados fakes',
@@ -138,6 +171,11 @@ export const staticInfo = {
         'https://user-images.githubusercontent.com/37268237/164992509-31355991-af5c-4306-afdb-6b697e035019.gif',
       ],
       techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
+      link: 'https://fake-generator.vercel.app/',
+      github: {
+        title: 'fake-generator',
+        link: 'https://github.com/Hewerton80/fake-generator#readme',
+      },
     },
     {
       title: 'My-animes',
@@ -152,6 +190,10 @@ export const staticInfo = {
       ],
       techs: ['TypeScript', 'NextJs'],
       link: 'https://my-animes-db.vercel.app/',
+      github: {
+        title: 'myAnimesDB-Next.js',
+        link: 'https://github.com/Hewerton80/myAnimesDB-Next.js',
+      },
     },
     {
       title: 'Encurtador de URLs',
@@ -166,41 +208,53 @@ export const staticInfo = {
       techs: ['HTML', 'CSS', 'TypeScript', 'NodeJS', 'MongoDB', 'ReactJS'],
       link: 'https://url-shortener-hewerton80.vercel.app',
     },
+
+    // {
+    //   title: 'Google Drive',
+    //   description: `
+    //           Para fins de estudo, desenvolvi um "clone" do Google drive 100% responivo.
+    //       Onde usuário pode se cadastrar, criar pastas, navegar entre elas,
+    //        fazer uploads de arquivos, renomear, mover para lixeira, etc.
+    //       `,
+    //   imgs: ['/images/Screenshot-drive.png', '/images/Screenshot-drive2.png'],
+    //   techs: ['HTML', 'CSS', 'JavaScript', 'NodeJS', 'MongoDB', 'ReactJS'],
+    //   link: 'https://jovial-lamport-bad4c9.netlify.com',
+    // },
+    // {
+    //   title: 'Instagram',
+    //   description: `
+    //           Para fins de estudo, desenvolvi ampliar as funcionaidades do projeto da Semana 7 da OmniStack (instagram).
+    //       Onde usuário pode se cadastrar, postar fotos, colocar o local, descrição e hastags.
+    //       `,
+    //   imgs: [
+    //     '/images/Screenshot-insta1.png',
+    //     '/images/Screenshot-insta2.png',
+    //     '/images/Screenshot-insta3.png',
+    //   ],
+    //   techs: ['HTML', 'CSS', 'JavaScript', 'NodeJS', 'MongoDB', 'ReactJS'],
+    //   link: 'https://distracted-pasteur-c86c90.netlify.com',
+    // },
+  ],
+  experiences: [
     {
-      title: 'Pokedex',
-      description:
-        "Projeto desenvolvido para consumir a api 'pokeapi.co'. Funcionalidades: Lista pokemons, habilidades, tipos e obtêm informações especificas do pokemon.",
-      techs: ['HTML', 'CSS', 'NodeJS', 'ReactJS', 'Material UI', 'Styled components'],
-      imgs: [
-        'https://user-images.githubusercontent.com/37268237/170846170-71bad836-0062-45ce-b148-c220c0632e1e.gif',
-      ],
-      link: 'https://upbeat-jones-72d20b.netlify.app/',
+      title: 'Frontend Developer',
+      employmentType: 'Full-time',
+      companyName: 'Rits Tecnologia',
+      isCurrentWork: true,
+      startDate: '2021-07-26T12:00:00.000Z',
+      endDate: DateTime.now().toISO(),
+      campanayUrlImg:
+        'https://media-exp1.licdn.com/dms/image/C4D0BAQHr82VdoHECSg/company-logo_100_100/0/1650283345676?e=1664409600&v=beta&t=sb0keGJngce-TFx78ib3-AzwFrnA9-iEEIvy_XUa8xg',
     },
     {
-      title: 'Google Drive',
-      description: `
-              Para fins de estudo, desenvolvi um "clone" do Google drive 100% responivo. 
-          Onde usuário pode se cadastrar, criar pastas, navegar entre elas,
-           fazer uploads de arquivos, renomear, mover para lixeira, etc.
-          `,
-      imgs: ['/images/Screenshot-drive.png', '/images/Screenshot-drive2.png'],
-      techs: ['HTML', 'CSS', 'JavaScript', 'NodeJS', 'MongoDB', 'ReactJS'],
-      link: 'https://jovial-lamport-bad4c9.netlify.com',
-    },
-    {
-      title: 'Instagram',
-      description: `
-              Para fins de estudo, desenvolvi ampliar as funcionaidades do projeto da Semana 7 da OmniStack (instagram). 
-          Onde usuário pode se cadastrar, postar fotos, colocar o local, descrição e hastags.
-          `,
-      imgs: [
-        '/images/Screenshot-insta1.png',
-        '/images/Screenshot-insta2.png',
-        '/images/Screenshot-insta3.png',
-      ],
-      techs: ['HTML', 'CSS', 'JavaScript', 'NodeJS', 'MongoDB', 'ReactJS'],
-      link: 'https://distracted-pasteur-c86c90.netlify.com',
+      title: 'Full-stack Developer',
+      employmentType: 'Full-time',
+      companyName: 'Compass.uol',
+      campanayUrlImg:
+        'https://media-exp1.licdn.com/dms/image/C4E0BAQEcxcfEAg0vNw/company-logo_100_100/0/1553710506973?e=1664409600&v=beta&t=OuEvcWiatQcNx8uUzZyD6PIXbKWZLr-kVMABm3-5ve8',
+      isCurrentWork: false,
+      startDate: '2021-03-15T12:00:00.00',
+      endDate: '2021-07-23T12:00:00.000Z',
     },
   ],
-  startCarrerDate: '2019-03-29T12:35:29.000Z',
 }

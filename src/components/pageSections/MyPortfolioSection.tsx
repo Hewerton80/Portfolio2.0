@@ -27,11 +27,12 @@ function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps
         </Text>
       </div>
       <div className="flex-1 w-full grid grid-cols-4 gap-[1px]">
-        {staticInfo.portfolio
-          .map((portifolio, index) => (
+        {
+          staticInfo.portfolio.map((portifolio, index) => (
             <PortfolioCard key={portifolio.title + index} portifolio={portifolio} />
           ))
-          .filter((_, index) => index === 0)}
+          // .filter((_, index) => index === 0)
+        }
       </div>
     </section>
   )

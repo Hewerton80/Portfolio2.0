@@ -1,14 +1,34 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useContext, useEffect, useRef } from 'react'
+import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import { IDS_SECTIONS } from '../../utils/idsSections'
 import { staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import Text from '../ui/typography/Text'
 
 function AboutSection({ className, ...restProps }: GlobalProps) {
+  const { setActiveUrl } = useContext(ActiveUrlContext)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          setActiveUrl(IDS_SECTIONS.ABOUT)
+        }
+      })
+    }, {})
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+    return () => observer.disconnect()
+  }, [setActiveUrl])
   return (
     <section
+      id={IDS_SECTIONS.ABOUT}
       className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5', className)}
+      ref={sectionRef}
       {...restProps}
     >
       <div className="flex flex-col pl-12">
@@ -20,7 +40,7 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
             getHtmlTagWrapperStyle('h2')
           )}
         >
-          About me
+          Sobre mim
         </Text>
         <div className="grid grid-cols-12 gap-8">
           <div className="flex flex-col space-y-16 col-span-6">

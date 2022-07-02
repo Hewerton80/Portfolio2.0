@@ -1,4 +1,4 @@
-import NavBar from '../common/NabBar'
+import NavBar from '../common/NavBar'
 
 interface MainTemplateProps extends GlobalProps {}
 

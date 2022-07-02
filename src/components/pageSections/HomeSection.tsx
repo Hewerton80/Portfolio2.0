@@ -24,11 +24,11 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           )}
         >
           <Text as="span" hasWordHoverEffect>
-            Hy,
+            Oi,
           </Text>
           <br />
           <Text as="span" hasWordHoverEffect>
-            {"I'm "}
+            Sou o{' '}
           </Text>
           <TiktokLogoReplica char="H" />
           <Text as="span" hasWordHoverEffect>
@@ -49,7 +49,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         >
           Front End Developer / Full stack
         </Text>
-        <Button>Contact-me</Button>
+        <Button>Contatatos</Button>
       </div>
     </section>
   )

@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon'
-const startEdutacationDate = '2016-06-29T12:00:00.000Z'
-const startCarrerDate = '2019-03-29T12:00:00.000Z'
+const startEdutacationDate = '2016-06-29T12:00:00.00'
+const startCarrerDate = '2019-03-29T12:00:00.00'
 export const staticInfo = {
   aboutMe: [
     `Bom, sou um programador frontend que estuda programação ${DateTime.fromISO(
@@ -110,6 +110,21 @@ export const staticInfo = {
       },
     },
     {
+      title: '0L1nk - Encurtador de URL',
+      description: `
+      Sabe aquela URL gigante que deixa seus chats e feeds poluídos, mas você está querendo compartilhar com alguém? O 0l1nk é uma ferramenta feita para poder resolver este tipo de problema. De um jeito rápido e simples, aqui você pode encurtar-las, deixando-as fáceis de se lembrar. Também é possível colocar um apelido para seu link (EX: https://0l1nk.com/minha-url). Além disso, você pode saber o número de acessos à mesma.
+          `,
+      imgs: [
+        'https://user-images.githubusercontent.com/37268237/176741685-fb72224d-a1ff-47f4-88f1-33493fa187f2.png',
+      ],
+      techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
+      link: 'https://www.0l1nk.com',
+      github: {
+        title: '0Lynk',
+        link: 'https://github.com/Hewerton80/0Lynk#readme',
+      },
+    },
+    {
       title: 'Gerenciador de tarefas',
       description: `
               Agendador/Gerenciador de tarefas. Funcionalidades: Criar/Atualizar/Remover tarefas, 
@@ -157,13 +172,18 @@ export const staticInfo = {
     {
       title: 'Pokedex',
       description:
-        "Projeto desenvolvido para consumir a api 'pokeapi.co'. Funcionalidades: Lista pokemons, habilidades, tipos e obtêm informações especificas do pokemon.",
-      techs: ['HTML', 'CSS', 'NodeJS', 'ReactJS', 'Material UI', 'Styled components'],
+        "Projeto desenvolvido para consumir a api 'pokeapi.co'. Funcionalidades: Lista pokemons e obtêm informações especificas do pokemon.",
+      techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
       imgs: [
         'https://user-images.githubusercontent.com/37268237/170846170-71bad836-0062-45ce-b148-c220c0632e1e.gif',
       ],
-      link: 'https://upbeat-jones-72d20b.netlify.app/',
+      link: 'https://pokedex-nextjs-tailwind-graphql.vercel.app/',
+      github: {
+        title: 'pokedex-nextjs-tailwind-graphql',
+        link: 'https://github.com/Hewerton80/pokedex-nextjs-tailwind-graphql/blob/master/README.md',
+      },
     },
+
     {
       title: 'Gerador de dados fakes',
       description: 'Um sistema que gera dados fakes para testes',
@@ -188,7 +208,7 @@ export const staticInfo = {
         '/images/my-animes3.png',
         '/images/my-animes4.png',
       ],
-      techs: ['TypeScript', 'NextJs'],
+      techs: ['TypeScript', 'NextJs', 'Styled Components'],
       link: 'https://my-animes-db.vercel.app/',
       github: {
         title: 'myAnimesDB-Next.js',
@@ -196,17 +216,26 @@ export const staticInfo = {
       },
     },
     {
-      title: 'Encurtador de URLs',
+      title: 'Whatsapp Clone',
       description: `
-              Sistema web onde seja possível um usuário poder realizar o encurtamento de uma URL.
+      Clone do Whatsapp web, utilizando react e styled-component.
           `,
       imgs: [
-        '/images/url-short1.png',
-        '/images/url-short2.png',
-        '/images/url-short3.png',
+        'https://user-images.githubusercontent.com/37268237/177004384-8b5cea94-c2bc-4fde-864f-64b6d2509bd1.jpg',
       ],
-      techs: ['HTML', 'CSS', 'TypeScript', 'NodeJS', 'MongoDB', 'ReactJS'],
-      link: 'https://url-shortener-hewerton80.vercel.app',
+      techs: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'Typescript',
+        'ReactJS',
+        'Nextjs',
+        'styled-components',
+      ],
+      github: {
+        title: 'clone-zap-frontend',
+        link: 'https://github.com/Hewerton80/clone-zap-frontend/blob/master/README.md',
+      },
     },
 
     // {
@@ -241,7 +270,7 @@ export const staticInfo = {
       employmentType: 'Full-time',
       companyName: 'Rits Tecnologia',
       isCurrentWork: true,
-      startDate: '2021-07-26T12:00:00.000Z',
+      startDate: '2021-07-26T12:00:00.00',
       endDate: DateTime.now().toISO(),
       campanayUrlImg:
         'https://media-exp1.licdn.com/dms/image/C4D0BAQHr82VdoHECSg/company-logo_100_100/0/1650283345676?e=1664409600&v=beta&t=sb0keGJngce-TFx78ib3-AzwFrnA9-iEEIvy_XUa8xg',
@@ -254,7 +283,29 @@ export const staticInfo = {
         'https://media-exp1.licdn.com/dms/image/C4E0BAQEcxcfEAg0vNw/company-logo_100_100/0/1553710506973?e=1664409600&v=beta&t=OuEvcWiatQcNx8uUzZyD6PIXbKWZLr-kVMABm3-5ve8',
       isCurrentWork: false,
       startDate: '2021-03-15T12:00:00.00',
-      endDate: '2021-07-23T12:00:00.000Z',
+      endDate: '2021-07-23T12:00:00.00',
+    },
+    {
+      title: 'Full-stack Developer',
+      employmentType: 'Scholarship',
+      companyName: 'Universidade Federal do Rio Grande do Norte',
+      campanayUrlImg:
+        'https://media-exp1.licdn.com/dms/image/C560BAQFe04mqmRZy0g/company-logo_100_100/0/1568064674419?e=1664409600&v=beta&t=zs4YhFUYF0h9IYZKW3hYocGAhP3JYLzPgxvtZxZE3kA',
+      isCurrentWork: false,
+      startDate: '2019-03-15T12:00:00.00',
+      endDate: '2021-01-15T12:00:00.00',
+    },
+  ],
+  educations: [
+    {
+      title: 'Ciência e Tecnologia',
+      employmentType: 'Graduação',
+      companyName: 'Universidade Federal do Rio Grande do Norte',
+      campanayUrlImg:
+        'https://media-exp1.licdn.com/dms/image/C560BAQFe04mqmRZy0g/company-logo_100_100/0/1568064674419?e=1664409600&v=beta&t=zs4YhFUYF0h9IYZKW3hYocGAhP3JYLzPgxvtZxZE3kA',
+      isCurrentWork: false,
+      startDate: '2016-06-15T12:00:00.00',
+      endDate: '2021-06-15T12:00:00.00',
     },
   ],
 }

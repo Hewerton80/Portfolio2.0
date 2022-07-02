@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import classNames from 'classnames'
-import { DateTime, Duration } from 'luxon'
-import { ReactNode, useCallback } from 'react'
-import { staticInfo } from '../../../utils/staticInfo'
-
+import { DateTime } from 'luxon'
+import { useCallback } from 'react'
+import { staticInfo } from '../../../../utils/staticInfo'
+import style from './ExperienceEdicationStep.module.css'
 interface StepperProps extends GlobalProps {}
 
 interface ExperienceEdicationStepProps {
   exepetienceEducation: typeof staticInfo.experiences[0]
 }
+
 export function Stepper({ children, className }: StepperProps) {
-  return (
-    <div className={classNames('flex flex-col space-y-4', className)}>{children}</div>
-  )
+  return <div className={classNames(style['stepper-root'], className)}>{children}</div>
 }
 
 export function ExperienceEdicationStep({
@@ -20,13 +19,12 @@ export function ExperienceEdicationStep({
 }: ExperienceEdicationStepProps) {
   // console.log(exepetienceEducation)
 
-  const getDiff = useCallback(() => {
-    const start = DateTime.fromISO(exepetienceEducation.startDate)
-    const end = DateTime.fromISO(exepetienceEducation.endDate)
-    const diffYears = end.diff(start, 'years')
-    const diffMonths = end.diff(start, 'months')
-    const years = Math.floor(diffYears.years)
-    const months = Math.floor(diffMonths.months)
+  const getDiffDate = useCallback(() => {
+    const startDate = DateTime.fromISO(exepetienceEducation.startDate)
+    const endDate = DateTime.fromISO(exepetienceEducation.endDate)
+    const diffDate = endDate.diff(startDate, 'days')
+    const years = Math.floor(diffDate.as('years'))
+    const months = Math.floor(diffDate.as('months'))
     if (years > 0) {
       return `${years} ano(s)`
     }
@@ -34,12 +32,14 @@ export function ExperienceEdicationStep({
   }, [exepetienceEducation])
 
   return (
-    <div className="flex space-x-4">
-      <span className="w-14 h-14 rounded-full overflow-hidden">
+    <div className={style['experience-step-root']}>
+      <span className={style['experience-step-cicle']} />
+      <span className="w-12 h-12 rounded-full overflow-hidden">
         <img
-          className="w-14 h-14"
+          className="w-12 h-12"
           src={exepetienceEducation.campanayUrlImg}
           alt={exepetienceEducation.title}
+          loading="lazy"
         />
       </span>
       <div className="flex flex-col">
@@ -54,7 +54,7 @@ export function ExperienceEdicationStep({
             ? 'Atualmente'
             : DateTime.fromISO(exepetienceEducation?.endDate!).toFormat('MMM yyyy')}
           {' · '}
-          {getDiff()}
+          {getDiffDate()}
         </span>
       </div>
     </div>

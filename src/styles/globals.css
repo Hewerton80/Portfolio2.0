@@ -6,6 +6,9 @@
   * {
     @apply box-border m-0 p-0;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-sans bg-body text-white overflow-x-hidden;
     -webkit-font-smoothing: antialiased;

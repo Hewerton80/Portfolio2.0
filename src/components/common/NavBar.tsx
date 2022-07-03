@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import TiktokLogoReplica from '../ui/dataDisplay/TiktokLogoReplica'
+import { ContactsMediaIcons } from '../ui/navigation/ContactsMediaIcons'
 import Text from '../ui/typography/Text'
 
 function NavBar({ className, ...restProps }: GlobalProps) {
@@ -20,10 +21,17 @@ function NavBar({ className, ...restProps }: GlobalProps) {
       href: `/#${IDS_SECTIONS.EXPERIENCE}`,
       value: IDS_SECTIONS.EXPERIENCE,
     },
+    {
+      text: 'Contatos',
+      href: `/#${IDS_SECTIONS.CONTACT}`,
+      value: IDS_SECTIONS.CONTACT,
+    },
   ]
+
   return (
     <aside
       className={classnames(
+        'hidden lg:block',
         'fixed left-0 top-0 z-10',
         'w-32.5 h-screen',
         ' bg-gray-900',
@@ -64,6 +72,7 @@ function NavBar({ className, ...restProps }: GlobalProps) {
           ))}
         </ul>
       </nav>
+      <ContactsMediaIcons className="mt-8" />
     </aside>
   )
 }

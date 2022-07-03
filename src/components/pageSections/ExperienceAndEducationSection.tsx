@@ -38,10 +38,7 @@ function ExperienceAndEducationSection() {
         <Text
           as="h2"
           hasWordHoverEffect
-          className={classNames(
-            'text-7xl text-primary font-bold',
-            getHtmlTagWrapperStyle('h2')
-          )}
+          className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
           Experiência
         </Text>
@@ -49,7 +46,8 @@ function ExperienceAndEducationSection() {
           as="h3"
           hasWordHoverEffect
           className={classNames(
-            'text-4xl text-primary font-bold',
+            'text-2xl sm:text-3xl md:text-4xl',
+            'text-primary font-bold',
             getHtmlTagWrapperStyle('h3')
           )}
         >
@@ -68,7 +66,8 @@ function ExperienceAndEducationSection() {
           as="h3"
           hasWordHoverEffect
           className={classNames(
-            'text-4xl text-primary font-bold',
+            'text-2xl sm:text-3xl md:text-4xl',
+            'text-primary font-bold',
             getHtmlTagWrapperStyle('h3')
           )}
         >

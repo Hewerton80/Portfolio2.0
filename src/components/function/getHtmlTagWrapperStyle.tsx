@@ -5,6 +5,8 @@ const tagsContents = {
   h2: "before:content-['<h2>'] after:content-['</h2>']",
   h3: "before:content-['<h3>'] after:content-['</h3>']",
   p: "before:content-['<p>'] after:content-['</p>']",
+  ul: "before:content-['<ul>'] after:content-['</ul>']",
+  li: "before:content-['<li>'] after:content-['</li>']",
 }
 
 export const getHtmlTagWrapperStyle = (htmlTagWrapper: keyof typeof tagsContents) => {

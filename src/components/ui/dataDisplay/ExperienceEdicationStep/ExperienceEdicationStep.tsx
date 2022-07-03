@@ -34,20 +34,24 @@ export function ExperienceEdicationStep({
   return (
     <div className={style['experience-step-root']}>
       <span className={style['experience-step-cicle']} />
-      <span className="w-12 h-12 rounded-full overflow-hidden">
+      <span className="aspect-square min-w-[48px] w-12 h-12 mx-4 rounded-full overflow-hidden">
         <img
-          className="w-12 h-12"
+          className="aspect-square w-full h-full"
           src={exepetienceEducation.campanayUrlImg}
           alt={exepetienceEducation.title}
           loading="lazy"
+          width={48}
+          height={48}
         />
       </span>
-      <div className="flex flex-col">
-        <strong>{exepetienceEducation.title}</strong>
-        <span className="text-sm">
-          {exepetienceEducation.companyName} · {exepetienceEducation.employmentType}
-        </span>
-        <span className="text-sm text-gray-500">
+      <div className="flex flex-col text-sm text- sm:text-base ">
+        <strong className="line-clamp-1">{exepetienceEducation.title}</strong>
+        <p>
+          <span className="text-sm line-clamp-1">
+            {exepetienceEducation.companyName} · {exepetienceEducation.employmentType}
+          </span>
+        </p>
+        <span className="text-xs sm:text-sm text-gray-500 line-clamp-1">
           {DateTime.fromISO(exepetienceEducation.startDate).toFormat('MMM yyyy')}
           {' - '}
           {exepetienceEducation.isCurrentWork

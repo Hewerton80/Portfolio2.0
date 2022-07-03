@@ -3,15 +3,21 @@ import type { AppProps } from 'next/app'
 import MainTemplate from '../components/templates/MainTemplate'
 import { Settings } from 'luxon'
 import { ActiveUrlProvider } from '../contexts/ActiveUrlContext'
+import Head from 'next/head'
 Settings.defaultLocale = 'pt-br'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ActiveUrlProvider>
-      <MainTemplate>
-        <Component {...pageProps} />
-      </MainTemplate>
-    </ActiveUrlProvider>
+    <>
+      <Head>
+        <title>Hewerton Adão</title>
+      </Head>
+      <ActiveUrlProvider>
+        <MainTemplate>
+          <Component {...pageProps} />
+        </MainTemplate>
+      </ActiveUrlProvider>
+    </>
   )
 }
 

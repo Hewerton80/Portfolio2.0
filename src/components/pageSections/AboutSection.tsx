@@ -27,7 +27,7 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
   return (
     <section
       id={IDS_SECTIONS.ABOUT}
-      className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5', className)}
+      // className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5', className)}
       ref={sectionRef}
       {...restProps}
     >
@@ -35,15 +35,12 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
         <Text
           as="h2"
           hasWordHoverEffect
-          className={classNames(
-            'text-7xl text-primary font-bold mb-16',
-            getHtmlTagWrapperStyle('h2')
-          )}
+          className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
           Sobre mim
         </Text>
-        <div className="grid grid-cols-12 gap-8">
-          <div className="flex flex-col space-y-16 col-span-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col space-y-16 ">
             <Text as="p" className={classNames(getHtmlTagWrapperStyle('p'))}>
               {staticInfo.aboutMe.map((paragraph, index) => (
                 <Text as="span" key={index + 'about'}>
@@ -54,14 +51,14 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
               ))}
             </Text>
           </div>
-          <div className="col-span-6">
+          <div>
             <div className="border-1 border-primary rounded-lg p-3">
               <div className="flex flex-wrap -ml-3 -mt-3">
                 {staticInfo.skills.map((skill, index) => (
                   <Fragment key={index + 'skill'}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      className="ml-3 mt-3"
+                      className="ml-3 mt-3 h-5 md:h-7"
                       src={skill.urlBadge}
                       alt={skill.name}
                       loading="lazy"

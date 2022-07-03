@@ -3,6 +3,9 @@ import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import Text from '../ui/typography/Text'
 import Button from '../ui/forms/Button'
 import TiktokLogoReplica from '../ui/dataDisplay/TiktokLogoReplica'
+import Link from 'next/link'
+import { IDS_SECTIONS } from '../../utils/idsSections'
+
 function HomeSection({ className, ...restProps }: GlobalProps) {
   return (
     <section
@@ -18,7 +21,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         <Text
           as="h1"
           className={classNames(
-            'text-8xl font-bold',
+            'text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold',
             'slide-left',
             getHtmlTagWrapperStyle('h1')
           )}
@@ -30,10 +33,12 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           <Text as="span" hasWordHoverEffect>
             Sou o{' '}
           </Text>
-          <TiktokLogoReplica char="H" />
-          <Text as="span" hasWordHoverEffect>
-            ewerton,
-          </Text>
+          <span>
+            <TiktokLogoReplica char="H" />
+            <Text as="span" hasWordHoverEffect>
+              ewerton,
+            </Text>
+          </span>
           <br />
           <Text as="span" hasWordHoverEffect>
             web developer
@@ -49,7 +54,11 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         >
           Front End Developer / Full stack
         </Text>
-        <Button>Contatatos</Button>
+        <Link href={`#${IDS_SECTIONS.CONTACT}`}>
+          <a>
+            <Button>Contatatos</Button>
+          </a>
+        </Link>
       </div>
     </section>
   )

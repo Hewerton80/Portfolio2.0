@@ -3,11 +3,11 @@
 }
 
 .experience-step-root {
-  @apply flex space-x-4 relative h-16;
+  @apply flex relative h-16;
 }
 
 .experience-step-cicle {
-  @apply flex w-4 h-4 bg-primary rounded-full mt-6 -translate-y-1/2 relative;
+  @apply flex min-w-[1rem] w-4 h-4 bg-primary rounded-full mt-6 -translate-y-1/2 relative;
 }
 
 .stepper-root .experience-step-root:not(:last-child) .experience-step-cicle::after {

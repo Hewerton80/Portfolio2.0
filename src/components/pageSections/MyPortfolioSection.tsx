@@ -32,17 +32,14 @@ function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps
   return (
     <section
       id={IDS_SECTIONS.PORTFOLIO}
-      className={classNames('flex flex-col', 'w-full h-fit', 'py-22.5', className)}
+      className={classNames('px-0', className)}
       ref={sectionRef}
       {...restProps}
     >
       <div className="flex flex-col pl-[78px] pr-7.5">
         <Text
           as="h2"
-          className={classNames(
-            'text-7xl text-primary font-bold mb-16',
-            getHtmlTagWrapperStyle('h2')
-          )}
+          className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
           Portfolio
         </Text>
@@ -50,7 +47,12 @@ function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps
           {staticInfo.portifolioDescription}
         </Text>
       </div>
-      <div className="flex-1 w-full grid grid-cols-4 gap-[1px]">
+      <div
+        className={classNames(
+          'flex-1 w-full',
+          'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1px]'
+        )}
+      >
         {
           staticInfo.portfolio.map((portifolio, index) => (
             <PortfolioCard key={portifolio.title + index} portifolio={portifolio} />

@@ -1,6 +1,8 @@
 import { DateTime } from 'luxon'
 const startEdutacationDate = '2016-06-29T12:00:00.00'
 const startCarrerDate = '2019-03-29T12:00:00.00'
+const email = 'hewerton80@gmail.com'
+const github = 'Hewerton80'
 export const staticInfo = {
   aboutMe: [
     `Bom, sou um programador frontend que estuda programação ${DateTime.fromISO(
@@ -308,4 +310,13 @@ export const staticInfo = {
       endDate: '2021-06-15T12:00:00.00',
     },
   ],
+  contontacts: {
+    phone: '(84) 98809-1975',
+    email,
+    whatsappLink: 'https://web.whatsapp.com/send?phone=5584988091975',
+    emailLink: `mailto:${email}`,
+    linkedin: 'https://bit.ly/34C6FYg',
+    github,
+    githubLink: `https://github.com/${github}`,
+  },
 }

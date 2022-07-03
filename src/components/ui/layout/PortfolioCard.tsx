@@ -73,7 +73,7 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
                 <a
                   className="underline text-blue-400 line-clamp-1"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {portifolio?.github.title}
                 </a>
@@ -87,7 +87,7 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
                 <a
                   className="underline text-blue-400 line-clamp-1"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {portifolio.link}
                 </a>
@@ -115,7 +115,7 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
           <div className="flex w-3/5 justify-center mx-auto">
             {portifolio?.link ? (
               <Link href={portifolio.link} passHref>
-                <a target="_blank" rel="noreferrer">
+                <a target="_blank" rel="noopener noreferrer">
                   {imgModalElement}
                 </a>
               </Link>

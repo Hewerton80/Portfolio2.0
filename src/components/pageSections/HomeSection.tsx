@@ -9,12 +9,7 @@ import { IDS_SECTIONS } from '../../utils/idsSections'
 function HomeSection({ className, ...restProps }: GlobalProps) {
   return (
     <section
-      className={classNames(
-        'flex items-center',
-        'w-full min-h-screen',
-        'px-7.5 py-22.5',
-        className
-      )}
+      className={classNames('min-h-screen', 'px-7.5 py-22.5', className)}
       {...restProps}
     >
       <div className={classNames('flex flex-col', 'pl-12 space-y-16')}>

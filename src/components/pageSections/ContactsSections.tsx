@@ -64,7 +64,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
         >
           Contatos
         </Text>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-8">
+        <div className="flex flex-col space-y-8">
           <ul
             className={classNames(
               'flex flex-col text-lg relative '

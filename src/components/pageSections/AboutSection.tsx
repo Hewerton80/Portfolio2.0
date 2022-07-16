@@ -37,7 +37,7 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Sobre mim
+          About me
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col space-y-16 ">

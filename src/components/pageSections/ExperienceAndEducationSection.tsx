@@ -31,7 +31,7 @@ function ExperienceAndEducationSection() {
   return (
     <section
       id={IDS_SECTIONS.EXPERIENCE}
-      className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5')}
+      className={classNames('flex', 'w-full min-h-screen', 'px-7.5 py-22.5')}
       ref={sectionRef}
     >
       <div className="flex flex-col pl-12 space-y-16">
@@ -40,7 +40,7 @@ function ExperienceAndEducationSection() {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Experiência
+          Experience
         </Text>
         <Text
           as="h3"
@@ -51,7 +51,7 @@ function ExperienceAndEducationSection() {
             getHtmlTagWrapperStyle('h3')
           )}
         >
-          Experiência
+          Employments
         </Text>
 
         <Stepper className="">
@@ -71,7 +71,7 @@ function ExperienceAndEducationSection() {
             getHtmlTagWrapperStyle('h3')
           )}
         >
-          Educação
+          Education
         </Text>
         <Stepper>
           {staticInfo.educations.map((education, index) => (

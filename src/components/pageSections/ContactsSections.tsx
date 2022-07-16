@@ -18,7 +18,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
       href: staticInfo.contontacts.emailLink,
     },
     {
-      text: 'Telefone: ',
+      text: 'Telephone: ',
       textLink: staticInfo.contontacts.phone,
       href: staticInfo.contontacts.whatsappLink,
     },
@@ -52,7 +52,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
   return (
     <section
       id={IDS_SECTIONS.CONTACT}
-      className={classNames('flex', 'w-full h-fit', 'px-7.5 py-22.5', className)}
+      className={classNames('flex', 'w-full min-h-screen', 'px-7.5 py-22.5', className)}
       ref={sectionRef}
       {...restProps}
     >
@@ -62,7 +62,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Contatos
+          Contacts
         </Text>
         <div className="flex flex-col space-y-8">
           <ul

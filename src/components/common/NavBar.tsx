@@ -14,19 +14,19 @@ function NavBar({ className, ...restProps }: GlobalProps) {
   const [showMenu, setShowMenu] = useState(false)
 
   const navItems = [
-    { text: 'Sobre mim', href: `/#${IDS_SECTIONS.ABOUT}`, value: IDS_SECTIONS.ABOUT },
+    { text: 'About me', href: `/#${IDS_SECTIONS.ABOUT}`, value: IDS_SECTIONS.ABOUT },
     {
       text: 'Portfolio',
       href: `/#${IDS_SECTIONS.PORTFOLIO}`,
       value: IDS_SECTIONS.PORTFOLIO,
     },
     {
-      text: 'Experiência',
+      text: 'Experience',
       href: `/#${IDS_SECTIONS.EXPERIENCE}`,
       value: IDS_SECTIONS.EXPERIENCE,
     },
     {
-      text: 'Contatos',
+      text: 'Contacts',
       href: `/#${IDS_SECTIONS.CONTACT}`,
       value: IDS_SECTIONS.CONTACT,
     },

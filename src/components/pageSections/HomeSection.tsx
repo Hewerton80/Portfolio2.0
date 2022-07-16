@@ -22,11 +22,11 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           )}
         >
           <Text as="span" hasWordHoverEffect>
-            Oi,
+            Hi,
           </Text>
           <br />
           <Text as="span" hasWordHoverEffect>
-            Sou o{' '}
+            I&apos;m{' '}
           </Text>
           <span>
             <TiktokLogoReplica char="H" />
@@ -51,7 +51,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         </Text>
         <Link href={`#${IDS_SECTIONS.CONTACT}`}>
           <a>
-            <Button>Contatatos</Button>
+            <Button>contacts</Button>
           </a>
         </Link>
       </div>

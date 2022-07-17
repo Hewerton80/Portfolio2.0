@@ -2,8 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import MainTemplate from '../components/templates/MainTemplate'
 import { Settings } from 'luxon'
-import { ActiveUrlProvider } from '../contexts/ActiveUrlContext'
 import Head from 'next/head'
+import Providers from '../contexts'
 Settings.defaultLocale = 'en-US'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,11 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Hewerton Adão</title>
       </Head>
-      <ActiveUrlProvider>
+      <Providers>
         <MainTemplate>
           <Component {...pageProps} />
         </MainTemplate>
-      </ActiveUrlProvider>
+      </Providers>
     </>
   )
 }

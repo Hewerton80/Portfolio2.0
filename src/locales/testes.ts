@@ -1,17 +1,13 @@
 import { DateTime } from 'luxon'
 const startEdutacationDate = '2016-06-29T12:00:00.00'
 const startCarrerDate = '2019-03-29T12:00:00.00'
-const email = 'hewerton80@gmail.com'
-const github = 'Hewerton80'
 export const staticInfo = {
   aboutMe: [
-    `I'm a frontend programmer who's been studying programming ${DateTime.fromISO(
+    `Bom, sou um programador frontend que estuda programação ${DateTime.fromISO(
       startEdutacationDate
-    ).toRelative()}, I've been in the job market ${DateTime.fromISO(
-      startCarrerDate
-    ).toRelative()}.`,
-    `From back to front, I worked on several projects, such as: management panels, education platform, marketplace, landing pages, blogs, etc..`,
-    `I have experience in Javascript, typescript, Node.js, express, ReactJs, Next Js, relational database, bootstrap, tailwind, styled components, html, css, scss, building interfaces based on Figma and Adobe templates. I am currently studying React Native and am interested in scalability and testing practices.`,
+    ).toRelative()}, estou no mercado ${DateTime.fromISO(startCarrerDate).toRelative()}.`,
+    `Do back ao front, Trabalhei em diversos projetos, tais como: painéis gerenciais, plataforma de educação, marketplace, landing pages, blogs etc.`,
+    `Tenho experiência em Javascript, typescript, Node.js, express, ReactJs, Next Js, banco de dados relacionais, bootstrap, tailwind, styled components, html, css, scss, construção de interfaces baseados em templates Figma e Adobe. No momento estudo React Native e tenho interesse em escalabilidade e práticas de testes.`,
   ],
   skills: [
     {
@@ -95,7 +91,7 @@ export const staticInfo = {
     },
   ],
   portifolioDescription:
-    'Some projects that I participated in, that I did to launch on the market or for study and learning purposes.',
+    'Alguns projetos do qual eu participei, que fiz para lançar no mercado ou com fins de estudo e aprendizado',
   portfolio: [
     {
       title: 'Platafoma LoP',
@@ -116,7 +112,7 @@ export const staticInfo = {
     {
       title: '0L1nk - Encurtador de URL',
       description: `
-      You know that giant URL that leaves your chats and feeds polluted, but you want to share it with someone? 0l1nk is a tool designed to solve this type of problem. In a quick and simple way, here you can shorten them, making them easy to remember. It is also possible to put a nickname for your link (EX: https://0l1nk.com/minha-url). Also, you can know the number of hits to it.
+      Sabe aquela URL gigante que deixa seus chats e feeds poluídos, mas você está querendo compartilhar com alguém? O 0l1nk é uma ferramenta feita para poder resolver este tipo de problema. De um jeito rápido e simples, aqui você pode encurtar-las, deixando-as fáceis de se lembrar. Também é possível colocar um apelido para seu link (EX: https://0l1nk.com/minha-url). Além disso, você pode saber o número de acessos à mesma.
           `,
       imgs: [
         'https://user-images.githubusercontent.com/37268237/176741685-fb72224d-a1ff-47f4-88f1-33493fa187f2.png',
@@ -131,9 +127,9 @@ export const staticInfo = {
     {
       title: 'Gerenciador de tarefas',
       description: `
-      Scheduler/Task Manager. Features: Create/Update/Remove Tasks,
-      List tasks based on categories (Overdue, To Do Today, To Do and Done),
-      Update tasks to 'Done'.
+              Agendador/Gerenciador de tarefas. Funcionalidades: Criar/Atualizar/Remover tarefas, 
+              Listar tarefas com base nas categorias (Atrasadas, Para fazer hoje, Para fazer e Feitas), 
+              Atualizar tarefas para 'Feitas' 
           `,
       imgs: [
         'https://user-images.githubusercontent.com/37268237/110219011-8321e780-7e9b-11eb-9138-065fb96003e8.gif',
@@ -149,7 +145,7 @@ export const staticInfo = {
     },
     {
       title: 'Spotfy clone',
-      description: 'For study purposes, I developed a "clone" of Spotify',
+      description: 'Para fins de estudo, desenvolvi um "clone" do Spotfy',
       imgs: [
         'https://user-images.githubusercontent.com/37268237/166114575-ccc1b876-e893-460f-9ac5-c8bf4660b8ab.gif',
       ],
@@ -161,8 +157,8 @@ export const staticInfo = {
       },
     },
     {
-      title: 'Online currency converter',
-      description: 'Calculates currencies and exchange rates in real time',
+      title: 'Conversor de moeda online',
+      description: 'Calcula moedas e taxas de câmbio em tempo real',
       imgs: [
         'https://user-images.githubusercontent.com/37268237/164991850-04973204-acfc-44c8-a8b8-85463c7c3657.gif',
       ],
@@ -176,7 +172,7 @@ export const staticInfo = {
     {
       title: 'Pokedex',
       description:
-        "Project developed to consume the 'pokeapi.co' api. Features: List pokemons and get pokemon specific information.",
+        "Projeto desenvolvido para consumir a api 'pokeapi.co'. Funcionalidades: Lista pokemons e obtêm informações especificas do pokemon.",
       techs: ['HTML', 'CSS', 'JavaScript', 'Typescript', 'ReactJS', 'Nextjs', 'Tailwind'],
       imgs: [
         'https://user-images.githubusercontent.com/37268237/170846170-71bad836-0062-45ce-b148-c220c0632e1e.gif',
@@ -189,8 +185,8 @@ export const staticInfo = {
     },
 
     {
-      title: 'Fake data generator',
-      description: 'A system that generates fake data for testing',
+      title: 'Gerador de dados fakes',
+      description: 'Um sistema que gera dados fakes para testes',
       imgs: [
         'https://user-images.githubusercontent.com/37268237/164992509-31355991-af5c-4306-afdb-6b697e035019.gif',
       ],
@@ -204,7 +200,7 @@ export const staticInfo = {
     {
       title: 'My-animes',
       description: `
-              Site similar to IMD animes, using the kitsu api. Great for keeping up with new releases and reviews from the otaku community.
+              Site similar ao IMD animes, utilizando a kitsu api. Ótimo para acompanhar os novos lançamentos e avaliações da comunidade otaku.
           `,
       imgs: [
         '/images/my-animes1.png',
@@ -220,9 +216,9 @@ export const staticInfo = {
       },
     },
     {
-      title: 'Whatsapp web Clone',
+      title: 'Whatsapp Clone',
       description: `
-      Whatsapp web Clone
+      Clone do Whatsapp web, utilizando react e styled-component.
           `,
       imgs: [
         'https://user-images.githubusercontent.com/37268237/177004384-8b5cea94-c2bc-4fde-864f-64b6d2509bd1.jpg',
@@ -312,13 +308,4 @@ export const staticInfo = {
       endDate: '2021-06-15T12:00:00.00',
     },
   ],
-  contontacts: {
-    phone: '(84) 98809-1975',
-    email,
-    whatsappLink: 'https://web.whatsapp.com/send?phone=5584988091975',
-    emailLink: `mailto:${email}`,
-    linkedin: 'https://bit.ly/34C6FYg',
-    github,
-    githubLink: `https://github.com/${github}`,
-  },
 }

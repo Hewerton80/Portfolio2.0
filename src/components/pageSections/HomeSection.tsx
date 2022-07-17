@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import Text from '../ui/typography/Text'
-import Button from '../ui/forms/Button'
+// import Button from '../ui/forms/'
 import TiktokLogoReplica from '../ui/dataDisplay/TiktokLogoReplica'
 import Link from 'next/link'
 import { IDS_SECTIONS } from '../../utils/idsSections'
+import Button from '../ui/forms/Button'
 
 function HomeSection({ className, ...restProps }: GlobalProps) {
   return (

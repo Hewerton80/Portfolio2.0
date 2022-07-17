@@ -5,11 +5,7 @@ const email = 'hewerton80@gmail.com'
 const github = 'Hewerton80'
 export const staticInfo = {
   aboutMe: [
-    `I'm a frontend programmer who's been studying programming ${DateTime.fromISO(
-      startEdutacationDate
-    ).toRelative()}, I've been in the job market ${DateTime.fromISO(
-      startCarrerDate
-    ).toRelative()}.`,
+    `I'm a frontend programmer who's been studying programming 5, I've been in the job market 3.`,
     `From back to front, I worked on several projects, such as: management panels, education platform, marketplace, landing pages, blogs, etc..`,
     `I have experience in Javascript, typescript, Node.js, express, ReactJs, Next Js, relational database, bootstrap, tailwind, styled components, html, css, scss, building interfaces based on Figma and Adobe templates. I am currently studying React Native and am interested in scalability and testing practices.`,
   ],

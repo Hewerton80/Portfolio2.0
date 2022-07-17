@@ -1,6 +1,8 @@
-import { createContext, useCallback, useEffect, useState } from 'react'
+import { createContext, Fragment, useCallback, useEffect, useState } from 'react'
 import { CodeLocalesNameType, ITextsNames, localeText } from '../locales'
 import UTSLocales from '../../UTSLocales.json'
+import Cookies from 'js-cookie'
+import { getLocaleCodeFromCookies } from '../utils/cookies'
 
 const codeLocales = Object.keys(UTSLocales)
 
@@ -13,17 +15,17 @@ interface TranslateContextProps {
 export const TranslateContext = createContext({} as TranslateContextProps)
 
 export function TranslateProvider({ children }: { children: React.ReactNode }) {
-  const [activedLocale, setActivedLocale] = useState<CodeLocalesNameType>('pt-BR')
+  const [activedLocale, setActivedLocale] = useState<CodeLocalesNameType>(
+    getLocaleCodeFromCookies()
+  )
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem('locale-code', activedLocale)
+    Cookies.set('locale-code', activedLocale)
   }, [activedLocale])
 
   useEffect(() => {
-    const localeCodeLocalStorage = localStorage.getItem('locale-code')
-    if (localeCodeLocalStorage && codeLocales.includes(localeCodeLocalStorage)) {
-      setActivedLocale(localeCodeLocalStorage as CodeLocalesNameType)
-    }
+    setIsMounted(true)
   }, [])
 
   const translate = useCallback(
@@ -35,7 +37,7 @@ export function TranslateProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <TranslateContext.Provider value={{ activedLocale, setActivedLocale, translate }}>
-      {children}
+      {isMounted && children}
     </TranslateContext.Provider>
   )
 }

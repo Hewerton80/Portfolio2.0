@@ -4,7 +4,7 @@ import MainTemplate from '../components/templates/MainTemplate'
 import { Settings } from 'luxon'
 import Head from 'next/head'
 import Providers from '../contexts'
-Settings.defaultLocale = 'en-US'
+// Settings.defaultLocale = 'en-US'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

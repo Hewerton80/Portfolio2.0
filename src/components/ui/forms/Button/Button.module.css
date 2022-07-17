@@ -1,6 +1,7 @@
 .root {
-    @apply relative flex items-center justify-center border-1 border-primary h-12.25 
-    max-w-[13.75rem] w-full  bg-transparent tracking-[0.25rem]
+    @apply relative flex items-center justify-center border-1 border-primary 
+    h-10 sm:h-12.25 
+    max-w-[13.75rem] w-full bg-transparent tracking-[0.25rem]
     overflow-hidden
     ;
 }

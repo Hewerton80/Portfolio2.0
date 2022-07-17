@@ -1,7 +1,15 @@
+const UTSLocales = require('./UTSLocales.json');
+
+const codeLocales = Object.keys(UTSLocales)
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   webpack5: true,
   // reactStrictMode: true,
+  i18n: {
+    locales: codeLocales,
+    defaultLocale: codeLocales[0],
+  },
   pageExtensions: ['tsx'],
   async redirects() {
     return [

@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
 import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
-import { staticInfo } from '../../utils/staticInfo'
+import { portfolioInfo, staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import PortfolioCard from '../ui/layout/PortfolioCard'
 import Text from '../ui/typography/Text'
@@ -56,8 +56,8 @@ function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps
         )}
       >
         {
-          staticInfo.portfolio.map((portifolio, index) => (
-            <PortfolioCard key={portifolio.title + index} portifolio={portifolio} />
+          portfolioInfo.map((portifolio, index) => (
+            <PortfolioCard key={'portfolio' + index} portifolio={portifolio} />
           ))
           // .filter((_, index) => index === 0)
         }

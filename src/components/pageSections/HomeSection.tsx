@@ -27,7 +27,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
       className={classNames('relative', 'min-h-screen', 'px-7.5 py-22.5', className)}
       {...restProps}
     >
-      {/* <span className="absolute top-2.5 left-2.5 lg:left-auto right-auto lg:right-2.5">
+      <span className="absolute top-2.5 left-2.5 lg:left-auto right-auto lg:right-2.5">
         <>{console.log('activedLocale', activedLocale)}</>
         {
           <Select
@@ -36,7 +36,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
             options={languageOptions}
           />
         }
-      </span> */}
+      </span>
       <div className={classNames('flex flex-col', 'pl-12 space-y-16')}>
         <Text
           as="h1"

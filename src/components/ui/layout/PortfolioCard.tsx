@@ -2,22 +2,24 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useState } from 'react'
-import { staticInfo } from '../../../utils/staticInfo'
+import useTranslate from '../../../hooks/useTranslate'
+import { Iportfolio, portfolioInfo } from '../../../utils/staticInfo'
 import { Modal, ModalContent, ModalTitle } from '../overlay/Modal'
 import Text from '../typography/Text'
 
 interface PortfolioCardProps extends GlobalProps {
-  portifolio: typeof staticInfo.portfolio[0]
+  portifolio: Iportfolio
 }
 
 function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardProps) {
   const [openModal, setOpenModal] = useState(false)
+  const { activedLocale } = useTranslate()
 
   const imgModalElement = (
     <img
       className={classNames('w-full border-y')}
       src={portifolio.imgs[0]}
-      alt={portifolio.title}
+      alt={portifolio.header[activedLocale].title}
       loading="lazy"
     />
   )
@@ -35,13 +37,13 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
         <img
           className={classNames('absolute left-0 top-0 z-10', 'w-full h-full', 'blur-sm')}
           src={portifolio.imgs[0]}
-          alt={portifolio.title}
+          alt={portifolio.header[activedLocale].title}
           loading="lazy"
         />
         <img
           className={classNames('w-full mx-auto object-cover z-20')}
           src={portifolio.imgs[0]}
-          alt={portifolio.title}
+          alt={portifolio.header[activedLocale].title}
           loading="lazy"
         />
         <div
@@ -59,13 +61,13 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
           className={classNames('bottom-2 z-40', 'text-sm font-bold line-clamp-1')}
           style={{ position: 'absolute' }}
         >
-          {portifolio.title}
+          {portifolio.header[activedLocale].title}
         </Text>
       </div>
       <Modal show={openModal} size="lg" onClose={() => setOpenModal(false)}>
-        <ModalTitle> {portifolio.title}</ModalTitle>
+        <ModalTitle> {portifolio.header[activedLocale].title}</ModalTitle>
         <ModalContent className="space-y-4">
-          <p className="text-sm">{portifolio.description}</p>
+          <p className="text-sm">{portifolio.header[activedLocale].description}</p>
           {portifolio?.github && (
             <div className="flex space-x-2">
               <strong className="mb-2">GitHub: </strong>{' '}

@@ -18,4 +18,6 @@ export type TextWithLocaleType<Type> = {
 
 export type ITextsNames = keyof ITexts
 
+export type typeURSLocalesNames = keyof CodeLocalesType
+
 export type CodeLocalesNameType = keyof typeof URSLocales

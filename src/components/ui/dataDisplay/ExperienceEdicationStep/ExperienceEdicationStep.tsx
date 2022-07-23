@@ -22,9 +22,10 @@ export function ExperienceEdicationStep({
   const getDiffDate = useCallback(() => {
     const startDate = DateTime.fromISO(exepetienceEducation.startDate)
     const endDate = DateTime.fromISO(exepetienceEducation.endDate)
-    const diffDate = endDate.diff(startDate, 'days')
+    const diffDate = endDate.diff(startDate, 'minutes')
     const years = Math.floor(diffDate.as('years'))
     const months = Math.floor(diffDate.as('months'))
+
     if (years > 0) {
       return `${years} ano(s)`
     }

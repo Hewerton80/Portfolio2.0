@@ -2,8 +2,8 @@
 @import url(./slide-left.css);
 
 .title-section {
-    @apply text-3xl sm:text-5xl md:text-7xl text-primary font-bold mb-16;
+  @apply text-3xl sm:text-5xl md:text-7xl text-primary font-bold mb-16 first-letter:uppercase;
 }
 section {
-    @apply flex flex-col w-full h-fit px-7.5 py-22.5;
+  @apply flex flex-col w-full h-fit px-7.5 py-22.5;
 }

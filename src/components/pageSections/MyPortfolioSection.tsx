@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import { staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
@@ -12,6 +13,7 @@ interface MyPortfolioSectionProps extends GlobalProps {}
 function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps) {
   const { setActiveUrl } = useContext(ActiveUrlContext)
   const sectionRef = useRef<HTMLElement>(null)
+  const { translate } = useTranslate()
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
@@ -41,10 +43,10 @@ function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps
           as="h2"
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Portfolio
+          {translate('portfolioTitle')}
         </Text>
         <Text as="p" className={classNames('mb-20', getHtmlTagWrapperStyle('p'))}>
-          {staticInfo.portifolioDescription}
+          {translate('portifolioDescription')}
         </Text>
       </div>
       <div

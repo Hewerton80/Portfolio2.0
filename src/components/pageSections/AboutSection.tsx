@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { Fragment, useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import { staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
@@ -9,6 +10,8 @@ import Text from '../ui/typography/Text'
 
 function AboutSection({ className, ...restProps }: GlobalProps) {
   const { setActiveUrl } = useContext(ActiveUrlContext)
+
+  const { translate } = useTranslate()
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -37,18 +40,20 @@ function AboutSection({ className, ...restProps }: GlobalProps) {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          About me
+          {translate('aboutMeTitle')}
         </Text>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col space-y-16 ">
             <Text as="p" className={classNames(getHtmlTagWrapperStyle('p'))}>
-              {staticInfo.aboutMe.map((paragraph, index) => (
-                <Text as="span" key={index + 'about'}>
-                  {paragraph}
-                  <br />
-                  <br />
-                </Text>
-              ))}
+              {translate('aboutMeDescription')
+                .split('|')
+                .map((paragraph, index) => (
+                  <Text as="span" key={index + 'about'}>
+                    {paragraph}
+                    <br />
+                    <br />
+                  </Text>
+                ))}
             </Text>
           </div>
           <div>

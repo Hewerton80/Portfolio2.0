@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { VscChromeClose, VscThreeBars } from 'react-icons/vsc'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import TiktokLogoReplica from '../ui/dataDisplay/TiktokLogoReplica'
 import { ContactsMediaIcons } from '../ui/navigation/ContactsMediaIcons'
@@ -11,11 +12,16 @@ import Text from '../ui/typography/Text'
 function NavBar({ className, ...restProps }: GlobalProps) {
   const { activeUrl } = useContext(ActiveUrlContext)
   const [showMenu, setShowMenu] = useState(false)
+  const { translate } = useTranslate()
 
   const navItems = [
-    { text: 'About me', href: `/#${IDS_SECTIONS.ABOUT}`, value: IDS_SECTIONS.ABOUT },
     {
-      text: 'Portfolio',
+      text: translate('aboutMeTitle'),
+      href: `/#${IDS_SECTIONS.ABOUT}`,
+      value: IDS_SECTIONS.ABOUT,
+    },
+    {
+      text: translate('portfolioTitle'),
       href: `/#${IDS_SECTIONS.PORTFOLIO}`,
       value: IDS_SECTIONS.PORTFOLIO,
     },
@@ -25,7 +31,7 @@ function NavBar({ className, ...restProps }: GlobalProps) {
       value: IDS_SECTIONS.EXPERIENCE,
     },
     {
-      text: 'Contacts',
+      text: translate('contacts'),
       href: `/#${IDS_SECTIONS.CONTACT}`,
       value: IDS_SECTIONS.CONTACT,
     },
@@ -64,7 +70,7 @@ function NavBar({ className, ...restProps }: GlobalProps) {
             >
               <Link href={navItem.href}>
                 <a
-                  className="flex w-full h-12 items-center justify-center"
+                  className={classnames('flex w-full h-12 items-center justify-center ')}
                   onClick={() => setShowMenu(false)}
                 >
                   {navItem.text}

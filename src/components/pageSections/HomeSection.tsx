@@ -7,15 +7,11 @@ import Link from 'next/link'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import Button from '../ui/forms/Button'
 import { Select } from '../ui/forms/Select/Select'
-import { useContext, useMemo } from 'react'
-import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
-import { TranslateContext } from '../../contexts/TranslateContext'
-import { CodeLocalesNameType } from '../../locales'
-import Cookies from 'js-cookie'
-import { getLocaleCodeFromCookies } from '../../utils/cookies'
+import { useMemo } from 'react'
+import useTranslate from '../../hooks/useTranslate'
 
 function HomeSection({ className, ...restProps }: GlobalProps) {
-  const { activedLocale, setActivedLocale } = useContext(TranslateContext)
+  const { activedLocale, translate } = useTranslate()
 
   const languageOptions = useMemo(
     () =>
@@ -36,7 +32,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         {
           <Select
             value={activedLocale}
-            onChange={(e) => setActivedLocale(e.target.value as CodeLocalesNameType)}
+            onChange={(e) => (document.location.href = `/${e.target.value}`)}
             options={languageOptions}
           />
         }
@@ -51,11 +47,11 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
           )}
         >
           <Text as="span" hasWordHoverEffect>
-            Hi,
+            {translate('hi')},
           </Text>
           <br />
           <Text as="span" hasWordHoverEffect>
-            I&apos;m{' '}
+            {translate('iAm')}{' '}
           </Text>
           <span>
             <TiktokLogoReplica char="H" />
@@ -80,7 +76,7 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         </Text>
         <Link href={`#${IDS_SECTIONS.CONTACT}`}>
           <a>
-            <Button>contacts</Button>
+            <Button>{translate('contacts')}</Button>
           </a>
         </Link>
       </div>

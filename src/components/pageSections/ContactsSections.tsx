@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import { useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import { staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
@@ -9,6 +10,9 @@ import Text from '../ui/typography/Text'
 
 function ContactsSections({ className, ...restProps }: GlobalProps) {
   const { setActiveUrl } = useContext(ActiveUrlContext)
+
+  const { translate } = useTranslate()
+
   const sectionRef = useRef<HTMLElement>(null)
 
   const someContacts1 = [
@@ -62,7 +66,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Contacts
+          {translate('contacts').toLocaleLowerCase()}
         </Text>
         <div className="flex flex-col space-y-8">
           <ul

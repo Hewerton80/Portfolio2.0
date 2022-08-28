@@ -6,10 +6,14 @@ interface ITexts {
   hi: string
   iAm: string
   contacts: string
+  experience: string
   aboutMeTitle: string
   aboutMeDescription: string
   portfolioTitle: string
   portifolioDescription: string
+  employments: string
+  education: string
+  phone: string
 }
 
 export type TextWithLocaleType<Type> = {

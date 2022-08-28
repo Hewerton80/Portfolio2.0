@@ -28,7 +28,6 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
       {...restProps}
     >
       <span className="absolute top-2.5 left-2.5 lg:left-auto right-auto lg:right-2.5">
-        <>{console.log('activedLocale', activedLocale)}</>
         {
           <Select
             value={activedLocale}

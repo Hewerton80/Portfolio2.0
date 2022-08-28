@@ -22,7 +22,7 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
       href: staticInfo.contontacts.emailLink,
     },
     {
-      text: 'Telephone: ',
+      text: `${translate('phone')}: `,
       textLink: staticInfo.contontacts.phone,
       href: staticInfo.contontacts.whatsappLink,
     },

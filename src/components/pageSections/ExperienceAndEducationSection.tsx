@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
+import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
 import { staticInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
@@ -12,6 +13,8 @@ import Text from '../ui/typography/Text'
 
 function ExperienceAndEducationSection() {
   const { setActiveUrl } = useContext(ActiveUrlContext)
+  const { translate } = useTranslate()
+
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -40,7 +43,7 @@ function ExperienceAndEducationSection() {
           hasWordHoverEffect
           className={classNames('title-section', getHtmlTagWrapperStyle('h2'))}
         >
-          Experience
+          {translate('experience')}
         </Text>
         <Text
           as="h3"
@@ -51,7 +54,7 @@ function ExperienceAndEducationSection() {
             getHtmlTagWrapperStyle('h3')
           )}
         >
-          Employments
+          {translate('employments')}
         </Text>
 
         <Stepper className="">
@@ -71,7 +74,7 @@ function ExperienceAndEducationSection() {
             getHtmlTagWrapperStyle('h3')
           )}
         >
-          Education
+          {translate('education')}
         </Text>
         <Stepper>
           {staticInfo.educations.map((education, index) => (

@@ -26,7 +26,7 @@ function NavBar({ className, ...restProps }: GlobalProps) {
       value: IDS_SECTIONS.PORTFOLIO,
     },
     {
-      text: 'Experience',
+      text: translate('experience'),
       href: `/#${IDS_SECTIONS.EXPERIENCE}`,
       value: IDS_SECTIONS.EXPERIENCE,
     },

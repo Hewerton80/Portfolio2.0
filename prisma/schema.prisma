@@ -1,0 +1,16 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model Ip {
+    id        Int      @id @default(autoincrement())
+    ip        String   @db.Char(255)
+    createdAt DateTime @default(now())
+
+    @@map("public_ip")
+}

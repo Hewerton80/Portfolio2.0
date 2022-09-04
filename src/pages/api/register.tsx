@@ -1,18 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../../lib/primsa'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
-  let myIp = ''
-  try {
-    const { data } = await axios.get('https://api.ipify.org/?format=json')
-    myIp = data.ip
-    // console.log('myIp', myIp)
-  } catch (err) {
-    console.log('myIp erro')
-    return res.status(400).json({ success: false })
-  }
+  const { register: myIp } = req.body
   try {
     const now = new Date()
     const timezoneOffset = now.getTimezoneOffset()

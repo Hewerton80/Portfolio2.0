@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { GetServerSideProps, NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { useCallback, useEffect } from 'react'
 import AboutSection from '../components/pageSections/AboutSection'
 import ContactsSections from '../components/pageSections/ContactsSections'
@@ -9,17 +9,27 @@ import MyPortfolioSection from '../components/pageSections/MyPortfolioSection'
 
 const Home: NextPage = () => {
   const saveIpAdress = useCallback(async () => {
+    let myIp = ''
     try {
-      const response = await axios.post('/api/ip')
+      const { data: idObject } = await axios.get('https://api.ipify.org/?format=json')
+      myIp = idObject.ip
+    } catch (err) {
+      console.log('register erro')
+    }
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/register`,
+        { register: myIp }
+      )
       console.log('response:', response.data)
     } catch (error) {
       console.log('error:', error)
     }
   }, [])
 
-  // useEffect(() => {
-  //   saveIpAdress()
-  // }, [saveIpAdress])
+  useEffect(() => {
+    saveIpAdress()
+  }, [saveIpAdress])
 
   return (
     <>
@@ -32,13 +42,7 @@ const Home: NextPage = () => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/ip`)
-    // console.log('response:', response.data)
-  } catch (error) {
-    console.log('error:', error)
-  }
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
   }

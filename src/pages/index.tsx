@@ -34,8 +34,8 @@ const Home: NextPage = () => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const response = await axios.post('http://localhost:3000/api/ip')
-    console.log('response:', response.data)
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/ip`)
+    // console.log('response:', response.data)
   } catch (error) {
     console.log('error:', error)
   }

@@ -17,7 +17,7 @@ export const localeText: TextWithLocaleType<CodeLocalesType> = {
     employments: 'Empregos',
     education: 'Educação',
     phone: 'Telefone',
-    aboutMeDescription: `Bom, sou um programador frontend que estuda programação a ${yearsEducations} anos, estou no mercado acerca de ${yearsCarrer} anos.|
+    aboutMeDescription: `Bom, sou um programador frontend que estuda programação a ${yearsEducations} anos, estou no mercado há cerca de ${yearsCarrer} anos.|
       Do back ao front, Trabalhei em diversos projetos, tais como: painéis gerenciais, plataforma de educação, marketplace, landing pages, blogs etc.|
       Tenho experiência em Javascript, typescript, Node.js, express, ReactJs, Next Js, banco de dados relacionais, bootstrap, tailwind, styled components, html, css, scss, construção de interfaces baseados em templates Figma e Adobe. No momento estudo React Native e tenho interesse em escalabilidade e práticas de testes.
       `,

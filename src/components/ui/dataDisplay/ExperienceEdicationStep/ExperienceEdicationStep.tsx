@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import classNames from 'classnames'
-import { DateTime } from 'luxon'
+import { differenceInYears, differenceInMonths, format } from 'date-fns'
 import { useCallback } from 'react'
 import { staticInfo } from '../../../../utils/staticInfo'
 import style from './ExperienceEdicationStep.module.css'
 interface StepperProps extends GlobalProps {}
 
 interface ExperienceEdicationStepProps {
-  exepetienceEducation: typeof staticInfo.experiences[0]
+  exepetienceEducation: (typeof staticInfo.experiences)[0]
 }
 
 export function Stepper({ children, className }: StepperProps) {
@@ -20,16 +20,18 @@ export function ExperienceEdicationStep({
   // console.log(exepetienceEducation)
 
   const getDiffDate = useCallback(() => {
-    const startDate = DateTime.fromISO(exepetienceEducation.startDate)
-    const endDate = DateTime.fromISO(exepetienceEducation.endDate)
-    const diffDate = endDate.diff(startDate, 'minutes')
-    const years = Math.floor(diffDate.as('years'))
-    const months = Math.floor(diffDate.as('months'))
+    const startDate = new Date(exepetienceEducation.startDate)
+    const endDate = exepetienceEducation.isCurrentWork
+      ? new Date()
+      : new Date(exepetienceEducation.endDate)
+    // const diffDate = endDate.diff(startDate, 'minutes')
+    const diffYears = differenceInYears(endDate, startDate)
+    const diffMonths = differenceInMonths(endDate, startDate)
 
-    if (years > 0) {
-      return `${years} ano(s)`
+    if (diffYears > 0) {
+      return `${diffYears} ano(s)`
     }
-    return `${months} mese(s)`
+    return `${diffMonths} mese(s)`
   }, [exepetienceEducation])
 
   return (
@@ -53,11 +55,11 @@ export function ExperienceEdicationStep({
           </span>
         </p>
         <span className="text-xs sm:text-sm text-gray-500 line-clamp-1">
-          {DateTime.fromISO(exepetienceEducation.startDate).toFormat('MMM yyyy')}
+          {format(new Date(exepetienceEducation.startDate), 'MMM yyyy')}
           {' - '}
           {exepetienceEducation.isCurrentWork
             ? 'Atualmente'
-            : DateTime.fromISO(exepetienceEducation?.endDate!).toFormat('MMM yyyy')}
+            : format(new Date(exepetienceEducation?.endDate!), 'MMM yyyy')}
           {' · '}
           {getDiffDate()}
         </span>

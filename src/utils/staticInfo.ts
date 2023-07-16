@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon'
 import { CodeLocalesType } from '../locales'
 
 const email = 'hewerton80@gmail.com'
@@ -90,20 +89,20 @@ export const staticInfo = {
     {
       title: 'Frontend Developer',
       employmentType: 'Full-time',
-      companyName: 'Rits Tecnologia',
+      companyName: 'Compass.uol',
+      campanayUrlImg: '/images/compass.jpg',
       isCurrentWork: true,
-      startDate: '2021-07-26T12:00:00.00',
-      endDate: DateTime.now().toISO(),
-      campanayUrlImg: '/images/rits.jpg',
+      startDate: '2021-03-15T12:00:00.00',
+      endDate: '2021-07-23T12:00:00.00',
     },
     {
       title: 'Full-stack Developer',
       employmentType: 'Full-time',
-      companyName: 'Compass.uol',
-      campanayUrlImg: '/images/compass.jpg',
+      companyName: 'Rits Tecnologia',
       isCurrentWork: false,
-      startDate: '2021-03-15T12:00:00.00',
-      endDate: '2021-07-23T12:00:00.00',
+      startDate: '2021-07-26T12:00:00.00',
+      endDate: new Date().toISOString(),
+      campanayUrlImg: '/images/rits.jpg',
     },
     {
       title: 'Full-stack Developer',

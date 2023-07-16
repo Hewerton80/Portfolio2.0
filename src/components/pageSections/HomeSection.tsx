@@ -73,9 +73,9 @@ function HomeSection({ className, ...restProps }: GlobalProps) {
         >
           Front End Developer / Full stack
         </Text>
-        <Link href={`#${IDS_SECTIONS.CONTACT}`}>
-          <Button>{translate('contacts')}</Button>
-        </Link>
+        <Button asChild>
+          <Link href={`#${IDS_SECTIONS.CONTACT}`}>{translate('contacts')}</Link>
+        </Button>
       </div>
     </section>
   )

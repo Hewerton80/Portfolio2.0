@@ -57,7 +57,7 @@ function ExperienceAndEducationSection() {
           {translate('employments')}
         </Text>
 
-        <Stepper className="">
+        <Stepper>
           {staticInfo.experiences.map((experience, index) => (
             <ExperienceEdicationStep
               key={experience.title + index}
@@ -76,14 +76,14 @@ function ExperienceAndEducationSection() {
         >
           {translate('education')}
         </Text>
-        <Stepper>
+        {/* <Stepper>
           {staticInfo.educations.map((education, index) => (
             <ExperienceEdicationStep
               key={education.title + index}
               exepetienceEducation={education}
             />
           ))}
-        </Stepper>
+        </Stepper> */}
       </div>
     </section>
   )

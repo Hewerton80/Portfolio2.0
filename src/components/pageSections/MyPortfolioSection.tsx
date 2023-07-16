@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from 'react'
 import { ActiveUrlContext } from '../../contexts/ActiveUrlContext'
 import useTranslate from '../../hooks/useTranslate'
 import { IDS_SECTIONS } from '../../utils/idsSections'
-import { portfolioInfo, staticInfo } from '../../utils/staticInfo'
+import { portfolioInfo } from '../../utils/staticInfo'
 import { getHtmlTagWrapperStyle } from '../function/getHtmlTagWrapperStyle'
 import PortfolioCard from '../ui/layout/PortfolioCard'
 import Text from '../ui/typography/Text'
@@ -13,7 +13,7 @@ interface MyPortfolioSectionProps extends GlobalProps {}
 function MyPortfolioSection({ className, ...restProps }: MyPortfolioSectionProps) {
   const { setActiveUrl } = useContext(ActiveUrlContext)
   const sectionRef = useRef<HTMLElement>(null)
-  const { translate } = useTranslate()
+  const { translate, activedLocale } = useTranslate()
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {

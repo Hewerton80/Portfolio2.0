@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import MainTemplate from '../components/templates/MainTemplate'
 import Head from 'next/head'
 import Providers from '../contexts'
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

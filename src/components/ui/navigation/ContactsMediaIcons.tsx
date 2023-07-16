@@ -37,14 +37,15 @@ export function ContactsMediaIcons({ className }: ContactsMediaIconsProps) {
   return (
     <div className={classNames('flex justify-center space-x-3', className)}>
       {socialMediaItems.map((socialMediaItem) => (
-        <Link key={socialMediaItem.href} href={socialMediaItem.href} passHref>
-          <a
-            className="text-gray-300 hover:text-primary ease-in-out duration-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {socialMediaItem.icon}
-          </a>
+        <Link
+          key={socialMediaItem.href}
+          href={socialMediaItem.href}
+          passHref
+          className="text-gray-300 hover:text-primary ease-in-out duration-500"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {socialMediaItem.icon}
         </Link>
       ))}
     </div>

@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import { useState } from 'react'
 import useTranslate from '../../../hooks/useTranslate'
-import { Iportfolio, portfolioInfo } from '../../../utils/staticInfo'
-import { Modal, ModalContent, ModalTitle } from '../overlay/Modal'
+import { Iportfolio } from '../../../utils/staticInfo'
+import { Modal } from '../overlay/Modal'
 import Text from '../typography/Text'
 
 interface PortfolioCardProps extends GlobalProps {
@@ -65,34 +65,34 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
         </Text>
       </div>
       <Modal show={openModal} size="lg" onClose={() => setOpenModal(false)}>
-        <ModalTitle> {portifolio.header[activedLocale].title}</ModalTitle>
-        <ModalContent className="space-y-4">
+        <Modal.Title> {portifolio.header[activedLocale].title}</Modal.Title>
+        <Modal.Content className="space-y-4">
           <p className="text-sm">{portifolio.header[activedLocale].description}</p>
           {portifolio?.github && (
             <div className="flex space-x-2">
               <strong className="mb-2">GitHub: </strong>{' '}
-              <Link href={portifolio?.github.link} passHref>
-                <a
-                  className="underline text-blue-400 line-clamp-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {portifolio?.github.title}
-                </a>
+              <Link
+                href={portifolio?.github.link}
+                passHref
+                className="underline text-blue-400 line-clamp-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {portifolio?.github.title}
               </Link>
             </div>
           )}
           {portifolio?.link && (
             <div className="flex space-x-2">
               <strong className="mb-2">Acessar site: </strong>{' '}
-              <Link href={portifolio.link} passHref>
-                <a
-                  className="underline text-blue-400 line-clamp-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {portifolio.link}
-                </a>
+              <Link
+                href={portifolio.link}
+                passHref
+                className="underline text-blue-400 line-clamp-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {portifolio.link}
               </Link>
             </div>
           )}
@@ -116,16 +116,19 @@ function PortfolioCard({ className, portifolio, ...restProps }: PortfolioCardPro
           </div>
           <div className="flex w-3/5 justify-center mx-auto">
             {portifolio?.link ? (
-              <Link href={portifolio.link} passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  {imgModalElement}
-                </a>
+              <Link
+                href={portifolio.link}
+                passHref
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {imgModalElement}
               </Link>
             ) : (
               imgModalElement
             )}
           </div>
-        </ModalContent>
+        </Modal.Content>
       </Modal>
     </>
   )

@@ -27,9 +27,9 @@ const Home: NextPage = () => {
     }
   }, [])
 
-  useEffect(() => {
-    saveIpAdress()
-  }, [saveIpAdress])
+  // useEffect(() => {
+  //   saveIpAdress()
+  // }, [saveIpAdress])
 
   return (
     <>

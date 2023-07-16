@@ -4,7 +4,6 @@ const codeLocales = Object.keys(UTSLocales)
 
 /** @type {import('next').NextConfig} */
 module.exports = {
-  webpack5: true,
   i18n: {
     locales: codeLocales,
     defaultLocale: codeLocales[0],

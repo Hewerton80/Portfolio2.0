@@ -68,13 +68,12 @@ function NavBar({ className, ...restProps }: GlobalProps) {
               )}
               key={navItem.href}
             >
-              <Link href={navItem.href}>
-                <a
-                  className={classnames('flex w-full h-12 items-center justify-center ')}
-                  onClick={() => setShowMenu(false)}
-                >
-                  {navItem.text}
-                </a>
+              <Link
+                href={navItem.href}
+                className={classnames('flex w-full h-12 items-center justify-center ')}
+                onClick={() => setShowMenu(false)}
+              >
+                {navItem.text}
               </Link>
             </li>
           ))}

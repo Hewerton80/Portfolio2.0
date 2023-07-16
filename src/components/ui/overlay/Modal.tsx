@@ -11,14 +11,7 @@ export interface ModalProps extends GlobalProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
-export function Modal({
-  children,
-  className,
-  show,
-  size = 'md',
-  onClose,
-  ...rest
-}: ModalProps) {
+function Modal({ children, className, show, size = 'md', onClose, ...rest }: ModalProps) {
   // useEffect(() => {
   //   const bodyElement = getBodyElement()
   //   if (show) {
@@ -49,7 +42,7 @@ export function Modal({
   )
 }
 
-export function ModalTitle({ children, className, ...rest }: CardProps) {
+function ModalTitle({ children, className, ...rest }: CardProps) {
   return (
     <div className={cn('text-2xl font-bold flex px-7 pt-6', className)} {...rest}>
       <h5>{children}</h5>
@@ -57,10 +50,15 @@ export function ModalTitle({ children, className, ...rest }: CardProps) {
   )
 }
 
-export function ModalContent({ children, className, ...rest }: CardProps) {
+function ModalContent({ children, className, ...rest }: CardProps) {
   return (
     <div className={cn('flex flex-col px-7 py-6 overflow-auto', className)} {...rest}>
       {children}
     </div>
   )
 }
+
+Modal.Title = ModalTitle
+Modal.Content = ModalContent
+
+export { Modal }

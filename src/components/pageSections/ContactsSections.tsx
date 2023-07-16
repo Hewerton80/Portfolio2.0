@@ -84,14 +84,14 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
                 key={index + 'media'}
               >
                 <span className="w-16 sm:w-20">{mediaItem.text}</span>
-                <Link href={mediaItem.href} passHref>
-                  <a
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {mediaItem.textLink}
-                  </a>
+                <Link
+                  href={mediaItem.href}
+                  passHref
+                  className="hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {mediaItem.textLink}
                 </Link>
               </li>
             ))}
@@ -99,14 +99,14 @@ function ContactsSections({ className, ...restProps }: GlobalProps) {
           <ul className="flex flex-col">
             {someContacts2.map((mediaItem, index) => (
               <li key={index + 'media2'}>
-                <Link href={mediaItem.href} passHref>
-                  <a
-                    className="hover:underline underline text-primary text-sm sm:text-base"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {mediaItem.textLink}
-                  </a>
+                <Link
+                  href={mediaItem.href}
+                  passHref
+                  className="hover:underline underline text-primary text-sm sm:text-base"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {mediaItem.textLink}
                 </Link>
               </li>
             ))}

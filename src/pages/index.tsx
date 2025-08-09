@@ -1,11 +1,10 @@
-import axios from 'axios'
 import type { GetStaticProps, NextPage } from 'next'
-import { useCallback, useEffect } from 'react'
 import AboutSection from '../components/pageSections/AboutSection'
 import ContactsSections from '../components/pageSections/ContactsSections'
 import ExperienceAndEducationSection from '../components/pageSections/ExperienceAndEducationSection'
 import HomeSection from '../components/pageSections/HomeSection'
 import MyPortfolioSection from '../components/pageSections/MyPortfolioSection'
+import SEO from '../components/SEO'
 
 const Home: NextPage = () => {
   // const saveIpAdress = useCallback(async () => {
@@ -33,6 +32,7 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <SEO keywords="Hewerton Adão, Portfolio, Web Developer, Full Stack Developer" />
       <HomeSection />
       <AboutSection />
       <MyPortfolioSection />
